@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Albert Baptism Invitation</title>
+<style>
+body{
+margin:0;
+font-family: Arial, sans-serif;
+background: linear-gradient(180deg,#e9f6ff,#ffffff);
+color:#222;
+text-align:center;
+overflow-x:hidden;
+}
+/* HERO */
+.hero{
+padding:60px 20px;
+background: radial-gradient(circle at top,#ffffff,#dff1ff);
+}
+.title{
+font-size:42px;
+color:#b08d57;
+margin-bottom:10px;
+}
+.subtitle{
+font-size:18px;
+opacity:0.8;
+}
+/* BUTTONS */
+.btn{
+display:inline-block;
+padding:14px 22px;
+margin:8px;
+border-radius:30px;
+background:#b08d57;
+color:white;
+text-decoration:none;
+font-size:16px;
+transition:0.3s;
+}
+.btn:hover{
+transform:scale(1.05);
+background:#9a7747;
+}
+/* CARD */
+.card{
+background:white;
+margin:20px auto;
+padding:20px;
+border-radius:16px;
+max-width:520px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+/* SECTIONS */
+section{
+padding:30px 15px;
+}
+/* LANGUAGE */
+.langBox{
+margin-top:30px;
+}
+.hidden{display:none;}
+/* SMALL TEXT */
+.small{
+font-size:14px;
+opacity:0.7;
+}
+/* COUNTDOWN */
+.count{
+font-size:22px;
+color:#b08d57;
+font-weight:bold;
+}
+/* ANIMATION */
+.fade{
+animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+<body>
+<!-- LANGUAGE SELECT -->
+<div id="lang" class="hero fade">
+<div class="title">Holy Baptism</div>
+<div class="subtitle">Albert Kikoloff</div>
+<p class="small">“Let the little children come to Me” (Mark 10:14)</p>
+<div class="langBox">
+<p><b>Select Language / اختر اللغة</b></p>
+<button class="btn" onclick="en()">English</button>
+<button class="btn" onclick="ar()">العربية</button>
+</div>
+</div>
+<!-- ENGLISH -->
+<div id="en" class="hidden">
+<section>
+<div class="title">Holy Baptism</div>
+<div class="card fade">
+<p><b>Albert Kikoloff</b></p>
+<p>We warmly invite you to celebrate this blessed occasion with us.</p>
+</div>
+<div class="card">
+<p><b>Church</b></p>
+<p>St. Sophia Church - Saidnaya</p>
+<p><b>Saturday 11 July 2026</b></p>
+<p>6:30 PM</p>
+</div>
+<div class="card">
+<p><b>Celebration Dinner</b></p>
+<p>Jannet Restaurant - 9:00 PM</p>
+</div>
+<div class="card">
+<p><b>Countdown</b></p>
+<div class="count" id="countdown"></div>
+</div>
+
+WhatsApp Yara
+WhatsApp Danny
+
+Church Location
+
+</section>
+</div>
+<!-- ARABIC -->
+<div id="ar" class="hidden">
+<section>
+<div class="title">سرّ العماد المقدّس</div>
+<div class="card fade">
+<p><b>ألبرت كيكولوف</b></p>
+<p>نتشرّف بدعوتكم لمشاركتنا هذه المناسبة المباركة</p>
+</div>
+<div class="card">
+<p><b>الكنيسة</b></p>
+<p>كنيسة آجيا صوفيا - صيدنايا</p>
+<p><b>السبت 11 تموز 2026</b></p>
+<p>6:30 مساءً</p>
+</div>
+<div class="card">
+<p><b>حفل العشاء</b></p>
+<p>مطعم جنّة - 9:00 مساءً</p>
+</div>
+<div class="card">
+<p><b>العدّ التنازلي</b></p>
+<div class="count" id="countdown2"></div>
+</div>
+
+واتساب يارا
+واتساب داني
+
+موقع الكنيسة
+
+</section>
+</div>
+<script>
+// LANGUAGE
+function en(){
+document.getElementById('lang').style.display='none';
+document.getElementById('en').style.display='block';
+}
+function ar(){
+document.getElementById('lang').style.display='none';
+document.getElementById('ar').style.display='block';
+}
+// COUNTDOWN
+var target = new Date("July 11, 2026 18:30:00").getTime();
+setInterval(function(){
+var now = new Date().getTime();
+var diff = target - now;
+var days = Math.floor(diff / (1000*60*60*24));
+document.getElementById("countdown").innerHTML = days + " days left";
+document.getElementById("countdown2").innerHTML = days + " يوم متبقي";
+},1000);
+</script>
+</body>
+</html>
